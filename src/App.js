@@ -71,7 +71,7 @@ onInputChange = (event) => {
 
 onButtonSubmit = () => {
   this.setState({imageUrl: this.state.input})
-  fetch('http://localhost:3000/imageUrl', {
+  fetch('https://face-detection-be-s94b.onrender.com/imageUrl', {
               method: 'post',
             headers: {'content-Type': 'application/json'},
             body: JSON.stringify({
@@ -81,7 +81,7 @@ onButtonSubmit = () => {
         .then(response => response.json())
         .then(result => { 
           if(result) {
-            fetch('http://localhost:3000/image', {
+            fetch('https://face-detection-be-s94b.onrender.com/image', {
               method: 'put',
             headers: {'content-Type': 'application/json'},
             body: JSON.stringify({
